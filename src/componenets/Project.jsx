@@ -227,8 +227,9 @@
 
 // export default Project;
 //////////////////////////////////////////////////////////////////
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { IoClose } from 'react-icons/io5';
 
 /*
   🧠 COMPONENT: Projects Section - Premium Dark Green Edition
@@ -237,6 +238,7 @@ import { motion, AnimatePresence } from 'framer-motion';
   - Consistent animations and design language
   - Shows genuine projects with honest achievements
   - Fully responsive with premium aesthetics
+  - Enhanced modal with close button and better mobile responsiveness
 */
 
 const Project = () => {
@@ -359,9 +361,32 @@ const Project = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [filter, setFilter] = useState('all');
 
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedProject]);
+
   // Filter projects based on category
   const filteredProjects =
     filter === 'all' ? projects : projects.filter((p) => p.category === filter);
+
+  // Close modal with escape key
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === 'Escape') {
+        setSelectedProject(null);
+      }
+    };
+    window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, []);
 
   return (
     <section
@@ -370,7 +395,7 @@ const Project = () => {
         min-h-screen
         bg-gradient-to-br from-[#030c0a] via-[#0a2f24] to-[#030c0a]
         text-white
-        px-4 md:px-8 lg:px-16 xl:px-24
+        px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24
         py-20 pt-24 md:pt-28
         relative
         overflow-hidden
@@ -473,7 +498,7 @@ const Project = () => {
         {/* 📊 GRID LAYOUT - Responsive grid with premium cards */}
         <motion.div
           layout
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
         >
           <AnimatePresence>
             {filteredProjects.map((project, index) => (
@@ -502,7 +527,7 @@ const Project = () => {
                 "
               >
                 {/* 🖼️ IMAGE SECTION */}
-                <div className="overflow-hidden h-52 md:h-56 relative">
+                <div className="overflow-hidden h-48 sm:h-52 md:h-56 relative">
                   <img
                     src={project.img}
                     alt={project.title}
@@ -530,11 +555,11 @@ const Project = () => {
                 </div>
 
                 {/* 📝 CONTENT SECTION */}
-                <div className="p-5 md:p-6">
+                <div className="p-4 sm:p-5 md:p-6">
                   {/* 📌 TITLE - Premium gradient */}
                   <h3
                     className="
-                    text-lg md:text-xl font-semibold mb-2
+                    text-base sm:text-lg md:text-xl font-semibold mb-2
                     bg-gradient-to-r from-amber-400 to-emerald-400
                     bg-clip-text text-transparent
                   "
@@ -543,7 +568,7 @@ const Project = () => {
                   </h3>
 
                   {/* 📄 DESCRIPTION */}
-                  <p className="text-gray-400 text-xs md:text-sm mb-3 line-clamp-2">
+                  <p className="text-gray-400 text-xs sm:text-sm mb-3 line-clamp-2">
                     {project.desc}
                   </p>
 
@@ -570,7 +595,7 @@ const Project = () => {
                   </div>
 
                   {/* 🔘 BUTTONS - Premium styling */}
-                  <div className="flex gap-3">
+                  <div className="flex gap-2 sm:gap-3">
                     <motion.a
                       href={project.live}
                       target="_blank"
@@ -579,9 +604,9 @@ const Project = () => {
                       whileTap={{ scale: 0.95 }}
                       onClick={(e) => e.stopPropagation()}
                       className="
-                        relative px-3 md:px-4 py-1.5 md:py-2 rounded-lg
+                        flex-1 text-center px-2 sm:px-3 md:px-4 py-1.5 md:py-2 rounded-lg
                         bg-gradient-to-r from-amber-600 to-emerald-600
-                        text-white text-xs md:text-sm font-medium
+                        text-white text-xs sm:text-sm font-medium
                         hover:shadow-lg hover:shadow-amber-500/30
                         transition-all
                       "
@@ -597,8 +622,8 @@ const Project = () => {
                       whileTap={{ scale: 0.95 }}
                       onClick={(e) => e.stopPropagation()}
                       className="
-                        text-xs md:text-sm border border-amber-500 
-                        px-3 md:px-4 py-1.5 md:py-2 rounded
+                        flex-1 text-center px-2 sm:px-3 md:px-4 py-1.5 md:py-2 rounded
+                        text-xs sm:text-sm border border-amber-500 
                         hover:bg-amber-500 hover:text-white
                         transition-all
                       "
@@ -625,9 +650,9 @@ const Project = () => {
             whileHover={{ scale: 1.05, y: -3 }}
             whileTap={{ scale: 0.95 }}
             className="
-              inline-block px-8 md:px-10 py-3 md:py-4
+              inline-block px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-4
               bg-gradient-to-r from-amber-600 to-emerald-600
-              rounded-full font-semibold text-sm md:text-base
+              rounded-full font-semibold text-sm sm:text-base
               shadow-lg hover:shadow-amber-500/50
               transition-all duration-300
             "
@@ -637,7 +662,7 @@ const Project = () => {
         </motion.div>
       </div>
 
-      {/* 🎨 PROJECT MODAL - Premium dark green theme */}
+      {/* 🎨 PROJECT MODAL - Premium dark green theme with close button and responsive design */}
       <AnimatePresence>
         {selectedProject && (
           <motion.div
@@ -645,70 +670,121 @@ const Project = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedProject(null)}
-            className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 overflow-y-auto"
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0, y: 50 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 50 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
               onClick={(e) => e.stopPropagation()}
-              className="max-w-2xl w-full bg-gradient-to-br from-[#0a2f24] to-[#030c0a] rounded-2xl overflow-hidden shadow-2xl border border-amber-500/20"
+              className="relative max-w-2xl w-full mx-auto bg-gradient-to-br from-[#0a2f24] to-[#030c0a] rounded-2xl overflow-hidden shadow-2xl border border-amber-500/20 my-8"
             >
-              <img
-                src={selectedProject.img}
-                alt={selectedProject.title}
-                className="w-full h-64 object-cover"
-              />
-              <div className="p-6 md:p-8">
-                <h3 className="text-2xl md:text-3xl font-bold mb-2 bg-gradient-to-r from-amber-400 to-emerald-400 bg-clip-text text-transparent">
-                  {selectedProject.title}
-                </h3>
-                <p className="text-gray-300 mb-4">{selectedProject.desc}</p>
+              {/* Close Button - Top Right */}
+              <motion.button
+                onClick={() => setSelectedProject(null)}
+                whileHover={{ scale: 1.1, rotate: 90 }}
+                whileTap={{ scale: 0.9 }}
+                className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 
+                  w-8 h-8 sm:w-10 sm:h-10 rounded-full 
+                  bg-black/50 backdrop-blur-sm 
+                  flex items-center justify-center
+                  text-white hover:text-amber-400
+                  border border-white/20 hover:border-amber-500/50
+                  transition-all duration-300
+                  cursor-pointer"
+                aria-label="Close modal"
+              >
+                <IoClose className="text-lg sm:text-xl" />
+              </motion.button>
 
-                <div className="mb-4">
-                  <h4 className="text-amber-400 font-semibold mb-2">
-                    Key Features:
-                  </h4>
-                  <ul className="list-disc list-inside text-gray-300 space-y-1">
-                    {selectedProject.features.map((feature, i) => (
-                      <li key={i}>{feature}</li>
-                    ))}
-                  </ul>
-                </div>
+              {/* Modal Content */}
+              <div className="max-h-[90vh] overflow-y-auto">
+                <img
+                  src={selectedProject.img}
+                  alt={selectedProject.title}
+                  className="w-full h-48 sm:h-56 md:h-64 object-cover"
+                />
+                <div className="p-4 sm:p-6 md:p-8">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 bg-gradient-to-r from-amber-400 to-emerald-400 bg-clip-text text-transparent">
+                    {selectedProject.title}
+                  </h3>
+                  <p className="text-gray-300 text-sm sm:text-base mb-4">
+                    {selectedProject.desc}
+                  </p>
 
-                <div className="mb-6">
-                  <h4 className="text-amber-400 font-semibold mb-2">
-                    Tech Stack:
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {selectedProject.tags.map((tag, i) => (
-                      <span
-                        key={i}
-                        className="px-3 py-1 bg-amber-500/20 rounded-full text-sm border border-amber-500/30"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                  <div className="mb-4">
+                    <h4 className="text-amber-400 font-semibold mb-2 text-sm sm:text-base">
+                      Key Features:
+                    </h4>
+                    <ul className="list-disc list-inside text-gray-300 space-y-1 text-sm sm:text-base">
+                      {selectedProject.features.map((feature, i) => (
+                        <motion.li
+                          key={i}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: i * 0.05 }}
+                        >
+                          {feature}
+                        </motion.li>
+                      ))}
+                    </ul>
                   </div>
-                </div>
 
-                <div className="flex gap-4">
-                  <a
-                    href={selectedProject.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 text-center px-4 py-2 bg-gradient-to-r from-amber-600 to-emerald-600 rounded-lg font-semibold hover:shadow-lg transition"
-                  >
-                    Live Demo
-                  </a>
-                  <a
-                    href={selectedProject.code}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 text-center px-4 py-2 border border-amber-500 rounded-lg hover:bg-amber-500/20 transition"
-                  >
-                    View Code
-                  </a>
+                  <div className="mb-6">
+                    <h4 className="text-amber-400 font-semibold mb-2 text-sm sm:text-base">
+                      Tech Stack:
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedProject.tags.map((tag, i) => (
+                        <motion.span
+                          key={i}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: i * 0.03 }}
+                          className="px-2 sm:px-3 py-1 bg-amber-500/20 rounded-full text-xs sm:text-sm border border-amber-500/30"
+                        >
+                          {tag}
+                        </motion.span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Buttons Container - Responsive */}
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                    <motion.a
+                      href={selectedProject.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.02, y: -2 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="
+                        w-full sm:flex-1 text-center px-4 py-2.5 sm:py-3 
+                        bg-gradient-to-r from-amber-600 to-emerald-600 
+                        rounded-lg font-semibold text-sm sm:text-base
+                        hover:shadow-lg hover:shadow-amber-500/30
+                        transition-all duration-300
+                      "
+                    >
+                      🔗 Live Demo
+                    </motion.a>
+                    <motion.a
+                      href={selectedProject.code}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.02, y: -2 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="
+                        w-full sm:flex-1 text-center px-4 py-2.5 sm:py-3 
+                        border-2 border-amber-500 
+                        rounded-lg font-semibold text-sm sm:text-base
+                        hover:bg-amber-500 hover:text-white
+                        transition-all duration-300
+                      "
+                    >
+                      📂 View Code
+                    </motion.a>
+                  </div>
                 </div>
               </div>
             </motion.div>
