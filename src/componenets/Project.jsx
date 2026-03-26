@@ -287,7 +287,7 @@ const Project = () => {
         'Health Checks (Liveness & Readiness)',
         'Rolling Updates (Zero Downtime)',
       ],
-      live: 'https://shopify-frontend-production-df3d.up.railway.app',
+      live: 'https://shopifyclient.vercel.app/',
       code: 'https://github.com/amiitdev/shopify-docker',
       category: 'devops',
     },
