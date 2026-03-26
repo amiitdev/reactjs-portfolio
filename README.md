@@ -1,16 +1,135 @@
-# React + Vite
+# 🚀 Amit Kumar | Full Stack Developer & DevOps Enthusiast
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🌐 **Live Portfolio:** https://your-portfolio-link.com
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ About Me
 
-## React Compiler
+I am a **Full Stack Developer** with a strong focus on **DevOps and scalable systems**.
+I build modern web applications with clean UI, secure backend architecture, and production-ready deployments.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧠 What This Portfolio Shows
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🔐 Secure authentication systems (JWT + cookies)
+- ⚡ Real-time applications using WebSockets
+- 🐳 Containerized apps with Docker
+- ⚙️ CI/CD pipelines (Jenkins / GitHub Actions)
+- ☸️ Kubernetes deployments & scaling
+- 🎨 Modern UI with React & Tailwind CSS
+
+---
+
+## 🛠 Tech Stack
+
+### 💻 Frontend
+
+- React.js
+- Tailwind CSS
+- Framer Motion
+
+### ⚙️ Backend
+
+- Node.js
+- Express.js
+- MongoDB / PostgreSQL
+
+### 🚀 DevOps
+
+- Docker
+- Kubernetes
+- Jenkins
+- Nginx
+- CI/CD Pipelines
+
+---
+
+## 📂 Featured Projects
+
+### 🥇 Shopify DevOps App
+
+> Production-grade e-commerce app with Docker, Kubernetes, CI/CD, and Nginx architecture
+> 🔗 Live: https://your-live-link.com
+> 🔗 Code: https://github.com/amiitdev/shopify-docker
+
+---
+
+### 🥈 Chatify - Real-Time Chat App
+
+> Full-stack chat app with WebSockets, live messaging, and user presence
+> 🔗 Live: https://chatify-4vwv.vercel.app
+> 🔗 Code: https://github.com/amiitdev/chatify
+
+---
+
+### 🥉 DevOps Auth App
+
+> Secure authentication system with JWT, Docker, and Jenkins CI/CD
+> 🔗 Live: https://devops-auth-app.vercel.app
+> 🔗 Code: https://github.com/amiitdev/devops-auth-app
+
+---
+
+### 🏅 Productify - PERN App
+
+> Product management app using PostgreSQL with secure APIs and rate limiting
+> 🔗 Live: https://productify-sewc.onrender.com
+> 🔗 Code: https://github.com/amiitdev/productify
+
+---
+
+## 🎯 Features of This Portfolio
+
+- 🎬 Smooth animations with Framer Motion
+- 📱 Fully responsive design
+- 🧭 Smooth scrolling navigation
+- ✨ Modern glassmorphism UI
+- ⚡ Optimized performance
+
+---
+
+## 🚀 Getting Started
+
+```bash
+# Clone repository
+git clone https://github.com/amiitdev/your-portfolio.git
+
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+```
+
+---
+
+## 📬 Contact Me
+
+- 📧 Email: [amitkumar.devnode@gmail.com](mailto:amitkumar.devnode@gmail.com)
+- 💼 LinkedIn: https://linkedin.com/in/amit1924
+- 🐙 GitHub: https://github.com/amiitdev
+
+---
+
+## ⭐ Support
+
+If you like this portfolio:
+
+- ⭐ Star the repo
+- 🔁 Share it
+- 🚀 Keep building
+
+---
+
+## 💡 Future Improvements
+
+- Add case study pages
+- Add dark/light theme toggle
+- Improve animations
+- Add blog section
+
+---
+
+> ⚡ Built with passion, learning, and consistency.
