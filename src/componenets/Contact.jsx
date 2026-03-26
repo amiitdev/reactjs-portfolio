@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/purity */
 // import React from 'react';
 // import { motion } from 'framer-motion';
 // const Contact = () => {
@@ -117,6 +118,7 @@
 
 //////////////////////////////////////////////////////////////
 import React, { useState } from 'react';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import {
   FaGithub,
@@ -394,9 +396,9 @@ const Contact = () => {
           >
             {/* Name Input */}
             <motion.div
-            initial={{opacity:0,x:-50}}
-            whileInView={{opacity:1,x:0}}
-            transition={{duration:0.8,delay:10.5}}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 10.5 }}
             >
               <label className="block mb-2 text-xs sm:text-sm text-gray-300">
                 Your Name <span className="text-amber-400">*</span>
@@ -426,9 +428,9 @@ const Contact = () => {
 
             {/* Email Input */}
             <motion.div
-            initial={{opacity:0,x:-50}}
-            whileInView={{opacity:1,x:0}}
-            transition={{duration:0.8,delay:10.5}}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 10.5 }}
             >
               <label className="block mb-2 text-xs sm:text-sm text-gray-300">
                 Your Email <span className="text-amber-400">*</span>
@@ -454,7 +456,7 @@ const Contact = () => {
                   text-white
                 "
               />
-            </,div>
+            </motion.div>
 
             {/* Message Input */}
             <div>
@@ -462,9 +464,9 @@ const Contact = () => {
                 Message <span className="text-amber-400">*</span>
               </label>
               <motion.textarea
-              initial={{opacity:0,x:-50}}
-            whileInView={{opacity:1,x:0}}
-            transition={{duration:0.8,delay:10.5}}
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 10.5 }}
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
