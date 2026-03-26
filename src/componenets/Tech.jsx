@@ -243,11 +243,12 @@ import { TbBrandReact } from 'react-icons/tb';
 import { motion, AnimatePresence } from 'framer-motion';
 
 /*
-  🧠 COMPONENT: Tech Stack Section (Fresher Version)
+  🧠 COMPONENT: Tech Stack Section - Premium Dark Green Edition
   --------------------------------
+  - Matches Hero, About & Projects Shopify-style dark green theme
   - Realistic skill levels for a fresher/junior developer
   - Shows learning progress and enthusiasm
-  - Focus on fundamentals and modern tech
+  - Consistent premium animations and design
 */
 
 const Tech = () => {
@@ -255,7 +256,7 @@ const Tech = () => {
   const [hoveredTech, setHoveredTech] = useState(null);
 
   /*
-    📦 TECH DATA - Fresher Friendly
+    📦 TECH DATA - Fresher Friendly (All Original)
     --------------------------------
     - Realistic skill levels (60-85% range)
     - Shows ongoing learning journey
@@ -435,11 +436,11 @@ const Tech = () => {
       ? technologies
       : technologies.filter((t) => t.category === selectedCategory);
 
-  // Get level color based on proficiency (adjusted for freshers)
+  // Get level color based on proficiency (premium gold/green theme)
   const getLevelColor = (level) => {
-    if (level >= 75) return 'from-green-500 to-emerald-500'; // Confident
-    if (level >= 65) return 'from-blue-500 to-cyan-500'; // Building
-    if (level >= 55) return 'from-yellow-500 to-orange-500'; // Learning
+    if (level >= 75) return 'from-amber-500 to-emerald-500'; // Confident - Gold to Green
+    if (level >= 65) return 'from-amber-400 to-green-500'; // Building
+    if (level >= 55) return 'from-yellow-500 to-amber-500'; // Learning
     return 'from-gray-500 to-gray-600'; // Exploring
   };
 
@@ -451,11 +452,11 @@ const Tech = () => {
     return 'Exploring';
   };
 
-  // Get experience badge color
+  // Get experience badge color - Premium colors
   const getExperienceColor = (experience) => {
     if (experience.includes('+') || parseInt(experience) >= 2)
-      return 'text-green-400';
-    if (parseInt(experience) >= 1) return 'text-blue-400';
+      return 'text-emerald-400';
+    if (parseInt(experience) >= 1) return 'text-amber-400';
     return 'text-yellow-400';
   };
 
@@ -464,15 +465,14 @@ const Tech = () => {
       id="tech"
       className="
         min-h-screen
-        bg-gradient-to-br
-        from-gray-900 via-purple-900 to-gray-900
+        bg-gradient-to-br from-[#030c0a] via-[#0a2f24] to-[#030c0a]
         text-white
         px-4 md:px-8 lg:px-16 xl:px-24
         py-20 pt-24 md:pt-28
         relative overflow-hidden
       "
     >
-      {/* 🎬 FLOATING PARTICLES BACKGROUND */}
+      {/* 🎬 FLOATING PARTICLES BACKGROUND - Premium theme */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(30)].map((_, i) => (
           <motion.div
@@ -496,24 +496,25 @@ const Tech = () => {
               repeatType: 'reverse',
               ease: 'linear',
             }}
-            className="absolute w-1 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full opacity-20"
+            className="absolute w-1 h-1 bg-gradient-to-r from-amber-500 to-emerald-500 rounded-full opacity-20"
           />
         ))}
       </div>
 
-      {/* 🎨 GLOW BACKGROUND EFFECTS */}
-      <div className="absolute top-20 left-10 w-96 h-96 bg-purple-500 rounded-full blur-3xl opacity-10 animate-pulse"></div>
+      {/* 🎨 GLOW BACKGROUND EFFECTS - Premium dark green */}
+      <div className="absolute top-20 left-10 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl animate-pulse"></div>
       <div
-        className="absolute bottom-20 right-10 w-96 h-96 bg-pink-500 rounded-full blur-3xl opacity-10 animate-pulse"
+        className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse"
         style={{ animationDelay: '2s' }}
       ></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-amber-500/5 rounded-full blur-3xl"></div>
 
-      {/* Grid pattern overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f20_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f20_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)] pointer-events-none"></div>
+      {/* Premium grid pattern overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#c2410c20_1px,transparent_1px),linear-gradient(to_bottom,#c2410c20_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)] pointer-events-none"></div>
 
       {/* MAIN CONTAINER */}
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* TITLE SECTION */}
+        {/* TITLE SECTION - Premium gold gradient */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -524,18 +525,18 @@ const Tech = () => {
           <h2
             className="
             text-4xl md:text-5xl lg:text-6xl font-bold mb-4
-            bg-gradient-to-r from-purple-400 to-pink-400
+            bg-gradient-to-r from-white via-amber-200 to-emerald-200
             bg-clip-text text-transparent
           "
           >
             Tech Stack
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
             Technologies I'm currently working with and building expertise in
           </p>
         </motion.div>
 
-        {/* CATEGORY FILTERS */}
+        {/* CATEGORY FILTERS - Premium styling */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -553,8 +554,8 @@ const Tech = () => {
                 transition-all duration-300 flex items-center gap-2
                 ${
                   selectedCategory === category.id
-                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/30'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20 backdrop-blur-sm'
+                    ? 'bg-gradient-to-r from-amber-600 to-emerald-600 text-white shadow-lg shadow-amber-500/30'
+                    : 'bg-white/10 text-gray-300 hover:bg-white/20 backdrop-blur-sm border border-white/10'
                 }
               `}
             >
@@ -565,7 +566,7 @@ const Tech = () => {
           ))}
         </motion.div>
 
-        {/* GRID LAYOUT */}
+        {/* GRID LAYOUT - Premium cards */}
         <motion.div
           layout
           className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"
@@ -588,19 +589,20 @@ const Tech = () => {
                 onMouseLeave={() => setHoveredTech(null)}
                 className="
                   relative
-                  bg-gradient-to-br from-gray-800/70 to-gray-900/70
+                  bg-gradient-to-br from-[#0a2f24]/70 to-[#064e3b]/70
                   backdrop-blur-md
                   rounded-xl
                   overflow-hidden
                   cursor-pointer
                   group
+                  border border-white/5
                 "
               >
-                {/* Animated gradient border on hover */}
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                {/* Animated gradient border on hover - Premium gold/green */}
+                <div className="absolute inset-0 bg-gradient-to-r from-amber-500 via-emerald-500 to-amber-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                 {/* Card content */}
-                <div className="relative bg-gradient-to-br from-gray-800/90 to-gray-900/90 m-[1px] rounded-xl p-5">
+                <div className="relative bg-gradient-to-br from-[#0a2f24]/90 to-[#064e3b]/90 m-[1px] rounded-xl p-5">
                   {/* Icon */}
                   <motion.div
                     animate={{
@@ -619,10 +621,10 @@ const Tech = () => {
                     {tech.name}
                   </h3>
 
-                  {/* Experience badge */}
+                  {/* Experience badge - Premium colors */}
                   <div className="text-center mb-3">
                     <span
-                      className={`text-xs px-2 py-0.5 rounded-full bg-purple-500/20 ${getExperienceColor(tech.experience)}`}
+                      className={`text-xs px-2 py-0.5 rounded-full bg-amber-500/20 ${getExperienceColor(tech.experience)}`}
                     >
                       {tech.experience}
                     </span>
@@ -632,7 +634,7 @@ const Tech = () => {
                   <div className="space-y-1">
                     <div className="flex justify-between text-xs text-gray-400">
                       <span>Proficiency</span>
-                      <span className="text-purple-400">{tech.level}%</span>
+                      <span className="text-amber-400">{tech.level}%</span>
                     </div>
                     <div className="w-full bg-gray-700 rounded-full h-1.5 overflow-hidden">
                       <motion.div
@@ -644,14 +646,14 @@ const Tech = () => {
                     </div>
                   </div>
 
-                  {/* Level indicator */}
+                  {/* Level indicator - Premium colors */}
                   <div className="mt-2 text-center">
                     <span
                       className={`text-xs px-2 py-0.5 rounded-full ${
                         tech.level >= 75
-                          ? 'bg-green-500/20 text-green-300'
+                          ? 'bg-emerald-500/20 text-emerald-300'
                           : tech.level >= 65
-                            ? 'bg-blue-500/20 text-blue-300'
+                            ? 'bg-amber-500/20 text-amber-300'
                             : tech.level >= 55
                               ? 'bg-yellow-500/20 text-yellow-300'
                               : 'bg-gray-500/20 text-gray-300'
@@ -661,9 +663,9 @@ const Tech = () => {
                     </span>
                   </div>
 
-                  {/* Tooltip with description on hover */}
+                  {/* Tooltip with description on hover - Premium styling */}
                   <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20 w-max max-w-[200px]">
-                    <div className="bg-gray-900 text-white text-xs px-3 py-1.5 rounded-lg shadow-lg border border-purple-500/30 text-center">
+                    <div className="bg-gradient-to-br from-[#0a2f24] to-[#064e3b] text-white text-xs px-3 py-1.5 rounded-lg shadow-lg border border-amber-500/30 text-center">
                       {tech.description}
                     </div>
                   </div>
@@ -673,34 +675,34 @@ const Tech = () => {
           </AnimatePresence>
         </motion.div>
 
-        {/* STATISTICS SECTION - Fresher Friendly */}
+        {/* STATISTICS SECTION - Premium colors */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="mt-16 pt-8 border-t border-purple-500/20"
+          className="mt-16 pt-8 border-t border-amber-500/20"
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-amber-400 to-emerald-400 bg-clip-text text-transparent">
                 {technologies.length}+
               </div>
               <div className="text-sm text-gray-400">Technologies</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-amber-400 to-emerald-400 bg-clip-text text-transparent">
                 70%
               </div>
               <div className="text-sm text-gray-400">Avg. Proficiency</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-amber-400 to-emerald-400 bg-clip-text text-transparent">
                 10+
               </div>
               <div className="text-sm text-gray-400">Projects Built</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-amber-400 to-emerald-400 bg-clip-text text-transparent">
                 🚀
               </div>
               <div className="text-sm text-gray-400">Always Learning</div>
@@ -708,7 +710,7 @@ const Tech = () => {
           </div>
         </motion.div>
 
-        {/* LEARNING JOURNEY NOTE */}
+        {/* LEARNING JOURNEY NOTE - Premium styling */}
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

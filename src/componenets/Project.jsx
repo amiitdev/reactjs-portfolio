@@ -231,38 +231,28 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 /*
-  🧠 COMPONENT: Projects Section
+  🧠 COMPONENT: Projects Section - Premium Dark Green Edition
   --------------------------------
-  - Displays project cards with modern design
-  - Uses Framer Motion for advanced animations
-  - Fully responsive with desktop optimizations
-  - Interactive hover effects and modal preview
+  - Matches Hero & About's Shopify-style dark green theme
+  - Consistent animations and design language
+  - Shows genuine projects with honest achievements
+  - Fully responsive with premium aesthetics
 */
 
 const Project = () => {
   /*
     📦 DATA: Projects Array
     --------------------------------
+    - All original projects preserved exactly
     - Each object = one project
-    - Added more projects for better visual balance
     - Includes tech stack, links, and images
   */
   const projects = [
     {
       title: 'Personal Portfolio Website',
-
       desc: 'Responsive developer portfolio showcasing full-stack and DevOps projects with clean UI and structured project presentation',
-
       img: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&auto=format&fit=crop&q=80',
-
-      /*
-    🏷️ TECH STACK
-  */
       tags: ['HTML', 'Tailwind CSS', 'Responsive Design', 'UI/UX'],
-
-      /*
-    ✨ CORE FEATURES
-  */
       features: [
         'Responsive Layout',
         'Project Showcase Sections',
@@ -270,28 +260,14 @@ const Project = () => {
         'Clean UI with Tailwind',
         'GitHub Pages Deployment',
       ],
-
-      /*
-    🔗 LINKS
-  */
       live: 'https://amiitdev.github.io/portfolio/',
       code: 'https://github.com/amiitdev/portfolio',
-
-      /*
-    📂 CATEGORY
-  */
       category: 'frontend',
     },
     {
       title: 'Shopify DevOps - Docker + Kubernetes',
-
       desc: 'Production-grade e-commerce app deployed with Docker and Kubernetes featuring reverse proxy, CI/CD pipeline, health monitoring, and scalable architecture',
-
       img: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&auto=format&fit=crop&q=80',
-
-      /*
-    🏷️ TECH STACK (VERY STRONG)
-  */
       tags: [
         'React',
         'Node.js',
@@ -301,10 +277,6 @@ const Project = () => {
         'Nginx',
         'CI/CD',
       ],
-
-      /*
-    ✨ CORE FEATURES (THIS IS YOUR POWER)
-  */
       features: [
         'Docker Containerization',
         'Kubernetes Deployment & Scaling',
@@ -313,28 +285,14 @@ const Project = () => {
         'Health Checks (Liveness & Readiness)',
         'Rolling Updates (Zero Downtime)',
       ],
-
-      /*
-    🔗 LINKS
-  */
       live: 'https://shopify-frontend-production-df3d.up.railway.app',
       code: 'https://github.com/amiitdev/shopify-docker',
-
-      /*
-    📂 CATEGORY
-  */
       category: 'devops',
     },
     {
       title: 'Chatify - Real-Time Chat App',
-
       desc: 'Full-stack real-time chat application with WebSockets, live user presence, typing indicators, and image sharing',
-
       img: 'https://images.unsplash.com/photo-1611606063065-ee7946f0787a?w=600&auto=format&fit=crop&q=80',
-
-      /*
-    🏷️ TECH STACK TAGS
-  */
       tags: [
         'React',
         'Node.js',
@@ -343,10 +301,6 @@ const Project = () => {
         'Express',
         'WebSockets',
       ],
-
-      /*
-    ✨ CORE FEATURES (REAL + IMPRESSIVE)
-  */
       features: [
         'Real-time Messaging',
         'Typing Indicators',
@@ -355,33 +309,15 @@ const Project = () => {
         'Reply & Delete Messages',
         'Message Status Tracking',
       ],
-
-      /*
-    🔗 LINKS
-  */
       live: 'https://chatify-4vwv.vercel.app',
       code: 'https://github.com/amiitdev/chatify',
-
-      /*
-    📂 CATEGORY
-  */
       category: 'fullstack',
     },
     {
       title: 'DevOps Auth App',
-
       desc: 'Production-ready authentication system with JWT, secure cookies, and full DevOps pipeline using Docker and Jenkins',
-
       img: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&auto=format&fit=crop&q=80',
-
-      /*
-    🏷️ TECH TAGS (IMPORTANT FOR UI FILTERING)
-  */
       tags: ['React', 'Node.js', 'MongoDB', 'JWT', 'Docker', 'Jenkins'],
-
-      /*
-    ✨ KEY FEATURES (REAL, NOT GENERIC)
-  */
       features: [
         'JWT Authentication',
         'httpOnly Cookies Security',
@@ -390,28 +326,14 @@ const Project = () => {
         'Jenkins CI/CD Pipeline',
         'Environment-based Config',
       ],
-
-      /*
-    🔗 LINKS
-  */
-      live: 'https://devops-auth-app.vercel.app', // your deployed frontend
+      live: 'https://devops-auth-app.vercel.app',
       code: 'https://github.com/amiitdev/devops-auth-app',
-
-      /*
-    📂 CATEGORY (for filtering later)
-  */
       category: 'fullstack',
     },
     {
       title: 'Productify - PERN Product Manager',
-
       desc: 'Full-stack product management app using PostgreSQL with secure APIs, rate limiting, and production-ready architecture',
-
       img: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=600&auto=format&fit=crop&q=80',
-
-      /*
-    🏷️ TECH STACK
-  */
       tags: [
         'React',
         'Node.js',
@@ -420,10 +342,6 @@ const Project = () => {
         'Zustand',
         'Tailwind CSS',
       ],
-
-      /*
-    ✨ CORE FEATURES
-  */
       features: [
         'Full CRUD Operations',
         'PostgreSQL Database (Neon)',
@@ -432,16 +350,8 @@ const Project = () => {
         'REST API Architecture',
         'Production-ready Deployment',
       ],
-
-      /*
-    🔗 LINKS
-  */
       live: 'https://productify-sewc.onrender.com',
       code: 'https://github.com/amiitdev/productify',
-
-      /*
-    📂 CATEGORY
-  */
       category: 'fullstack',
     },
   ];
@@ -455,11 +365,10 @@ const Project = () => {
 
   return (
     <section
-      id="projects" // 🔗 Used for navbar scroll linking
+      id="projects"
       className="
         min-h-screen
-        bg-gradient-to-br
-        from-gray-900 via-purple-900 to-gray-900
+        bg-gradient-to-br from-[#030c0a] via-[#0a2f24] to-[#030c0a]
         text-white
         px-4 md:px-8 lg:px-16 xl:px-24
         py-20 pt-24 md:pt-28
@@ -467,19 +376,42 @@ const Project = () => {
         overflow-hidden
       "
     >
-      {/* 🎨 BACKGROUND GLOW EFFECTS - Enhanced for desktop */}
-      <div className="absolute top-20 left-10 w-96 h-96 bg-purple-500 rounded-full blur-3xl opacity-10 animate-pulse"></div>
+      {/* 🎨 BACKGROUND GLOW EFFECTS - Premium dark green theme */}
+      <div className="absolute top-20 left-10 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl animate-pulse"></div>
       <div
-        className="absolute bottom-20 right-10 w-96 h-96 bg-pink-500 rounded-full blur-3xl opacity-10 animate-pulse"
+        className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse"
         style={{ animationDelay: '2s' }}
       ></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-blue-500 rounded-full blur-3xl opacity-5"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-amber-500/5 rounded-full blur-3xl"></div>
 
-      {/* ✨ Grid pattern overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f20_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f20_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)] pointer-events-none"></div>
+      {/* ✨ Premium grid pattern overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#c2410c20_1px,transparent_1px),linear-gradient(to_bottom,#c2410c20_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)] pointer-events-none"></div>
+
+      {/* Floating particles (matching Hero) */}
+      {[...Array(20)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-1 h-1 bg-amber-400/20 rounded-full"
+          initial={{ x: 0, y: 0 }}
+          animate={{
+            x: [0, (Math.random() - 0.5) * 100, 0],
+            y: [0, (Math.random() - 0.5) * 100, 0],
+          }}
+          transition={{
+            duration: 5 + Math.random() * 10,
+            repeat: Infinity,
+            delay: Math.random() * 5,
+            ease: 'linear',
+          }}
+          style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+          }}
+        />
+      ))}
 
       <div className="max-w-7xl 2xl:max-w-[90rem] mx-auto relative z-10">
-        {/* 🧾 SECTION TITLE - Larger on desktop */}
+        {/* 🧾 SECTION TITLE - Premium gold gradient */}
         <motion.h2
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -487,7 +419,7 @@ const Project = () => {
           viewport={{ once: true }}
           className="
             text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-center
-            bg-gradient-to-r from-purple-400 to-pink-400
+            bg-gradient-to-r from-white via-amber-200 to-emerald-200
             bg-clip-text text-transparent
           "
         >
@@ -498,13 +430,13 @@ const Project = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-center text-gray-400 mb-8 max-w-2xl mx-auto"
+          className="text-center text-gray-400 mb-8 max-w-2xl mx-auto text-lg"
         >
           Here are some of my recent projects. Each one was built to solve real
           problems and showcase my skills.
         </motion.p>
 
-        {/* 🔍 FILTER BUTTONS - New feature */}
+        {/* 🔍 FILTER BUTTONS - Premium styling */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -515,6 +447,7 @@ const Project = () => {
             { id: 'all', label: 'All Projects', icon: '🎯' },
             { id: 'frontend', label: 'Frontend', icon: '🎨' },
             { id: 'fullstack', label: 'Full Stack', icon: '⚡' },
+            { id: 'devops', label: 'DevOps', icon: '🚀' },
           ].map((category) => (
             <motion.button
               key={category.id}
@@ -526,8 +459,8 @@ const Project = () => {
                 transition-all duration-300
                 ${
                   filter === category.id
-                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/30'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20 backdrop-blur-sm'
+                    ? 'bg-gradient-to-r from-amber-600 to-emerald-600 text-white shadow-lg shadow-amber-500/30'
+                    : 'bg-white/10 text-gray-300 hover:bg-white/20 backdrop-blur-sm border border-white/10'
                 }
               `}
             >
@@ -537,7 +470,7 @@ const Project = () => {
           ))}
         </motion.div>
 
-        {/* 📊 GRID LAYOUT - Responsive grid */}
+        {/* 📊 GRID LAYOUT - Responsive grid with premium cards */}
         <motion.div
           layout
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
@@ -559,15 +492,16 @@ const Project = () => {
                 onClick={() => setSelectedProject(project)}
                 className="
                   group relative
-                  bg-gradient-to-br from-gray-800/80 to-gray-900/80
+                  bg-gradient-to-br from-[#0a2f24]/80 to-[#064e3b]/80
                   backdrop-blur-md
                   rounded-xl overflow-hidden
-                  shadow-lg hover:shadow-2xl hover:shadow-purple-500/30
+                  shadow-lg hover:shadow-2xl hover:shadow-amber-500/30
                   transition-all duration-300
                   cursor-pointer
+                  border border-white/5
                 "
               >
-                {/* 🖼️ IMAGE SECTION - Enhanced with better sizing */}
+                {/* 🖼️ IMAGE SECTION */}
                 <div className="overflow-hidden h-52 md:h-56 relative">
                   <img
                     src={project.img}
@@ -581,25 +515,27 @@ const Project = () => {
                   />
 
                   {/* 🌑 GRADIENT OVERLAY */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-70"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#030c0a] via-transparent to-transparent opacity-70"></div>
 
-                  {/* Category badge */}
+                  {/* Category badge - Premium colors */}
                   <div className="absolute top-3 right-3">
-                    <span className="px-2 py-1 bg-black/50 backdrop-blur-sm rounded-full text-xs">
+                    <span className="px-2 py-1 bg-black/50 backdrop-blur-sm rounded-full text-xs border border-amber-500/30">
                       {project.category === 'frontend'
                         ? '🎨 Frontend'
-                        : '⚡ Full Stack'}
+                        : project.category === 'devops'
+                          ? '🚀 DevOps'
+                          : '⚡ Full Stack'}
                     </span>
                   </div>
                 </div>
 
                 {/* 📝 CONTENT SECTION */}
                 <div className="p-5 md:p-6">
-                  {/* 📌 TITLE */}
+                  {/* 📌 TITLE - Premium gradient */}
                   <h3
                     className="
                     text-lg md:text-xl font-semibold mb-2
-                    bg-gradient-to-r from-purple-400 to-pink-400
+                    bg-gradient-to-r from-amber-400 to-emerald-400
                     bg-clip-text text-transparent
                   "
                   >
@@ -611,16 +547,16 @@ const Project = () => {
                     {project.desc}
                   </p>
 
-                  {/* 🏷️ TAGS */}
+                  {/* 🏷️ TAGS - Premium colors */}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.slice(0, 3).map((tag, i) => (
                       <span
                         key={i}
                         className="
                           text-xs px-2 py-1
-                          bg-purple-500/20
-                          rounded-full text-purple-300
-                          border border-purple-500/30
+                          bg-amber-500/20
+                          rounded-full text-amber-300
+                          border border-amber-500/30
                         "
                       >
                         {tag}
@@ -633,7 +569,7 @@ const Project = () => {
                     )}
                   </div>
 
-                  {/* 🔘 BUTTONS */}
+                  {/* 🔘 BUTTONS - Premium styling */}
                   <div className="flex gap-3">
                     <motion.a
                       href={project.live}
@@ -644,9 +580,9 @@ const Project = () => {
                       onClick={(e) => e.stopPropagation()}
                       className="
                         relative px-3 md:px-4 py-1.5 md:py-2 rounded-lg
-                        bg-gradient-to-r from-purple-600 to-blue-600
+                        bg-gradient-to-r from-amber-600 to-emerald-600
                         text-white text-xs md:text-sm font-medium
-                        hover:shadow-lg hover:shadow-purple-500/30
+                        hover:shadow-lg hover:shadow-amber-500/30
                         transition-all
                       "
                     >
@@ -661,9 +597,9 @@ const Project = () => {
                       whileTap={{ scale: 0.95 }}
                       onClick={(e) => e.stopPropagation()}
                       className="
-                        text-xs md:text-sm border border-purple-500 
+                        text-xs md:text-sm border border-amber-500 
                         px-3 md:px-4 py-1.5 md:py-2 rounded
-                        hover:bg-purple-500 hover:text-white
+                        hover:bg-amber-500 hover:text-white
                         transition-all
                       "
                     >
@@ -676,7 +612,7 @@ const Project = () => {
           </AnimatePresence>
         </motion.div>
 
-        {/* 🔽 VIEW ALL BUTTON - Enhanced */}
+        {/* 🔽 VIEW ALL BUTTON - Premium styling */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -690,9 +626,9 @@ const Project = () => {
             whileTap={{ scale: 0.95 }}
             className="
               inline-block px-8 md:px-10 py-3 md:py-4
-              bg-gradient-to-r from-purple-600 to-pink-600
+              bg-gradient-to-r from-amber-600 to-emerald-600
               rounded-full font-semibold text-sm md:text-base
-              shadow-lg hover:shadow-purple-500/50
+              shadow-lg hover:shadow-amber-500/50
               transition-all duration-300
             "
           >
@@ -701,7 +637,7 @@ const Project = () => {
         </motion.div>
       </div>
 
-      {/* 🎨 PROJECT MODAL - New feature for project details */}
+      {/* 🎨 PROJECT MODAL - Premium dark green theme */}
       <AnimatePresence>
         {selectedProject && (
           <motion.div
@@ -716,7 +652,7 @@ const Project = () => {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 50 }}
               onClick={(e) => e.stopPropagation()}
-              className="max-w-2xl w-full bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl overflow-hidden shadow-2xl"
+              className="max-w-2xl w-full bg-gradient-to-br from-[#0a2f24] to-[#030c0a] rounded-2xl overflow-hidden shadow-2xl border border-amber-500/20"
             >
               <img
                 src={selectedProject.img}
@@ -724,13 +660,13 @@ const Project = () => {
                 className="w-full h-64 object-cover"
               />
               <div className="p-6 md:p-8">
-                <h3 className="text-2xl md:text-3xl font-bold mb-2 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                <h3 className="text-2xl md:text-3xl font-bold mb-2 bg-gradient-to-r from-amber-400 to-emerald-400 bg-clip-text text-transparent">
                   {selectedProject.title}
                 </h3>
                 <p className="text-gray-300 mb-4">{selectedProject.desc}</p>
 
                 <div className="mb-4">
-                  <h4 className="text-purple-400 font-semibold mb-2">
+                  <h4 className="text-amber-400 font-semibold mb-2">
                     Key Features:
                   </h4>
                   <ul className="list-disc list-inside text-gray-300 space-y-1">
@@ -741,14 +677,14 @@ const Project = () => {
                 </div>
 
                 <div className="mb-6">
-                  <h4 className="text-purple-400 font-semibold mb-2">
+                  <h4 className="text-amber-400 font-semibold mb-2">
                     Tech Stack:
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedProject.tags.map((tag, i) => (
                       <span
                         key={i}
-                        className="px-3 py-1 bg-purple-500/20 rounded-full text-sm"
+                        className="px-3 py-1 bg-amber-500/20 rounded-full text-sm border border-amber-500/30"
                       >
                         {tag}
                       </span>
@@ -761,7 +697,7 @@ const Project = () => {
                     href={selectedProject.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 text-center px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg font-semibold hover:shadow-lg transition"
+                    className="flex-1 text-center px-4 py-2 bg-gradient-to-r from-amber-600 to-emerald-600 rounded-lg font-semibold hover:shadow-lg transition"
                   >
                     Live Demo
                   </a>
@@ -769,7 +705,7 @@ const Project = () => {
                     href={selectedProject.code}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 text-center px-4 py-2 border border-purple-500 rounded-lg hover:bg-purple-500/20 transition"
+                    className="flex-1 text-center px-4 py-2 border border-amber-500 rounded-lg hover:bg-amber-500/20 transition"
                   >
                     View Code
                   </a>
