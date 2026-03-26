@@ -183,7 +183,7 @@ import hero from '../assets/hero_section.png';
 const Hero = () => {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 500], [0, 200]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0.1]);
 
   // Social media links data
   const socialLinks = [
@@ -280,7 +280,7 @@ const Hero = () => {
                 <span className="absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75 animate-ping"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
               </motion.span>
-              <span className="text-xs sm:text-sm text-amber-400 tracking-wider font-medium uppercase">
+              <span className="hidden md:flex text-xs sm:text-sm text-amber-400 tracking-wider font-medium uppercase">
                 Premium Developer
               </span>
             </motion.div>
@@ -417,8 +417,8 @@ const Hero = () => {
               className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/10"
             >
               {[
-                { value: '8+', label: 'Years Experience', icon: <FaCode /> },
-                { value: '50+', label: 'Projects', icon: <FaPalette /> },
+                { value: '1', label: 'Year Experience', icon: <FaCode /> },
+                { value: '15+', label: 'Projects', icon: <FaPalette /> },
                 { value: '24/7', label: 'Support', icon: <FaRocket /> },
               ].map((stat, i) => (
                 <motion.div

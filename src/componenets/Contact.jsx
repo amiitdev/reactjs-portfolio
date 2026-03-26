@@ -393,7 +393,11 @@ const Contact = () => {
             "
           >
             {/* Name Input */}
-            <div>
+            <motion.div
+            initial={{opacity:0,x:-50}}
+            whileInView={{opacity:1,x:0}}
+            transition={{duration:0.8,delay:10.5}}
+            >
               <label className="block mb-2 text-xs sm:text-sm text-gray-300">
                 Your Name <span className="text-amber-400">*</span>
               </label>
@@ -418,10 +422,14 @@ const Contact = () => {
                   text-white
                 "
               />
-            </div>
+            </motion.div>
 
             {/* Email Input */}
-            <div>
+            <motion.div
+            initial={{opacity:0,x:-50}}
+            whileInView={{opacity:1,x:0}}
+            transition={{duration:0.8,delay:10.5}}
+            >
               <label className="block mb-2 text-xs sm:text-sm text-gray-300">
                 Your Email <span className="text-amber-400">*</span>
               </label>
@@ -446,14 +454,17 @@ const Contact = () => {
                   text-white
                 "
               />
-            </div>
+            </,div>
 
             {/* Message Input */}
             <div>
               <label className="block mb-2 text-xs sm:text-sm text-gray-300">
                 Message <span className="text-amber-400">*</span>
               </label>
-              <textarea
+              <motion.textarea
+              initial={{opacity:0,x:-50}}
+            whileInView={{opacity:1,x:0}}
+            transition={{duration:0.8,delay:10.5}}
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
