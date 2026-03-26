@@ -1,0 +1,40 @@
+Scroll Position: 0px  →  scrolled = false (navbar is transparent)
+Scroll Position: 30px →  scrolled = false (still transparent)
+Scroll Position: 51px →  scrolled = true  (navbar becomes solid/dark)
+Scroll Position: 100px→  scrolled = true  (stays solid/dark)
+Scroll Position: 200px→  scrolled = true  (stays solid/dark)
+
+Page Layout:
+┌─────────────────────┐ ← 0px (top of page)
+│   Home Section      │
+│   (height: 500px)   │ ← offsetTop = 0
+│                     │   offsetHeight = 500
+├─────────────────────┤ ← 500px
+│   About Section     │
+│   (height: 400px)   │ ← offsetTop = 500
+│                     │   offsetHeight = 400
+├─────────────────────┤ ← 900px
+│   Projects Section  │
+│   (height: 600px)   │ ← offsetTop = 900
+│                     │   offsetHeight = 600
+└─────────────────────┘
+
+User Action: Scroll Down
+    ↓
+Browser: "Hey, I'm scrolling!"
+    ↓
+useEffect: "I'm watching for scroll!"
+    ↓
+handleActiveSection: "Let me calculate..."
+    ↓
+"Current scroll: 450px + 100 = 550px"
+    ↓
+"Check home: 0-500 → Not here"
+    ↓
+"Check about: 500-900 → YES! I'm in about!"
+    ↓
+setActiveSection('about')
+    ↓
+Navbar: "Time to highlight 'About' link"
+    ↓
+User sees: "About" link has underline ✅
