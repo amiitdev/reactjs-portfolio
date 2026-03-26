@@ -396,9 +396,9 @@ const Contact = () => {
           >
             {/* Name Input */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -150 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 10.5 }}
+              transition={{ duration: 1.8, delay: 0.5 }}
             >
               <label className="block mb-2 text-xs sm:text-sm text-gray-300">
                 Your Name <span className="text-amber-400">*</span>
@@ -428,9 +428,9 @@ const Contact = () => {
 
             {/* Email Input */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -150 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 10.5 }}
+              transition={{ duration: 1.8, delay: 0.5 }}
             >
               <label className="block mb-2 text-xs sm:text-sm text-gray-300">
                 Your Email <span className="text-amber-400">*</span>
@@ -464,9 +464,9 @@ const Contact = () => {
                 Message <span className="text-amber-400">*</span>
               </label>
               <motion.textarea
-                initial={{ opacity: 0, x: -50 }}
+                initial={{ opacity: 0, x: -150 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 10.5 }}
+                transition={{ duration: 1.8, delay: 0.5 }}
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
@@ -493,6 +493,8 @@ const Contact = () => {
             {/* Submit Button - Premium gold/green gradient */}
             <motion.button
               type="submit"
+              initial={{ opacity: 0, y: -700 }}
+              whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="
